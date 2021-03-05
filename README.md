@@ -11,5 +11,10 @@ The importance of a correct design is demonstrated, not only from the logic poin
 In the third part, a synchronous circuit will be simulated and implemented on an FPGA. 
 During this process it will be verified that all constraints are met and finally its logic operation will be validated.
 
+**Professors:** Dr. Ing. Ariel Pola (CognitionBI-Fundación Fulgor) and Eng. Federico G. Zacchigna (FIUBA)
+
 ## Content
 - [Lab 1: Shift and flash of RGB LEDs](https://github.com/gonzafernan/eamta-digital-design/tree/main/lab1-shift_n_flash_leds)
+
+## About EAMTA
+The Argentine School of Micro-Nanoelectronics, Technology and Applications is a one-week school where undergraduate and graduate students attend intensive courses on topics related to the area of micro-nano electronics, with the aim of disseminating this area of knowledge, deepening the knowledge of professionals and academics, and promoting the development of related technology in the country and the region.
