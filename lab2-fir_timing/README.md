@@ -10,15 +10,15 @@ Se considera un sistema de transmisión compuesto por una señal senoidal y un f
 
 ### Simulación
 
-Desarrollo del testbench para verificar el funcionamiento del modelo (archivo [tb_filtro_fir.v](./lab2-fir_timing/tb_filtro_fir.v)).
+Desarrollo del testbench para verificar el funcionamiento del modelo (archivo [tb_filtro_fir.v](./tb_filtro_fir.v)).
 
 Modificación de los coeficientes del filtro para las frecuencias de corte fcut=8kHz y fcut=18kHZ y comparación de la salida del filtro para cada una de esas frecuencias.
 
 | fcut  | Sañal generada (amarillo) y señal filtrada (verde) |
 |-------|----------------------------------------------------|
-| 6kHz  | ![](./lab2-fir_timing/imgs/img_sim_fcut_6khz.png)  |
-| 8kHz  | ![](./lab2-fir_timing/imgs/img_sim_fcut_8khz.png)  |
-| 18kHz | ![](./lab2-fir_timing/imgs/img_sim_fcut_18khz.png) |
+| 6kHz  | ![](./imgs/img_sim_fcut_6khz.png)                  |
+| 8kHz  | ![](./imgs/img_sim_fcut_8khz.png)                  |
+| 18kHz | ![](./imgs/img_sim_fcut_18khz.png)                 |
 
 Se puede observar que para una frecuencia de corte del filtro de 18kHz no se filtra el ruido por ser de 17kHz.
 
@@ -33,7 +33,7 @@ Detalle de celdas por jerarquías:
 |3     |  u_filtro_fir       |filtro_fir       |        377|         350|          421|
 |4     |  u_vio              |vio              |          1|           1|            1|
 
-Se puede observar cómo para una frecuencia de corte del filtro de 8kHz la cantidad de celdas utilizadas es menor que para 6kHz. Se puede analizar con mayor detalle las celdas utilizadas en cada caso en los logs de síntesis en la carpetada de [logs](./lab2-fir_timing/logs), allí es importante destacar que, por ejemplo, para 8kHz se utilizan mayor cantidad de *CARRY4* que para 6kHz.
+Se puede observar cómo para una frecuencia de corte del filtro de 8kHz la cantidad de celdas utilizadas es menor que para 6kHz. Se puede analizar con mayor detalle las celdas utilizadas en cada caso en los logs de síntesis en la carpetada de [logs](./logs), allí es importante destacar que, por ejemplo, para 8kHz se utilizan mayor cantidad de *CARRY4* que para 6kHz.
 
 ### Implementación
 
@@ -52,14 +52,14 @@ Comparación de histogramas de slack:
 
 | fclk | fcut | Histograma                                                 |
 |------|------|------------------------------------------------------------|
-|100MHz|6kHz  | ![](./lab2-fir_timing/reports/report_hist_6khz_100mhz.png) | 
-|150MHz|6kHz  | ![](./lab2-fir_timing/reports/report_hist_6khz_150mhz.png) |
-|100MHz|8kHz  | ![](./lab2-fir_timing/reports/report_hist_8khz_100mhz.png) | 
-|150MHz|8kHz  | ![](./lab2-fir_timing/reports/report_hist_8khz_150mhz.png) |
-|100MHz|18kHz | ![](./lab2-fir_timing/reports/report_hist_18khz_100mhz.png)| 
-|150MHz|18kHz | ![](./lab2-fir_timing/reports/report_hist_18khz_150mhz.png)|
+|100MHz|6kHz  | ![](./reports/report_hist_6khz_100mhz.png)                 | 
+|150MHz|6kHz  | ![](./report_hist_6khz_150mhz.png)                         |
+|100MHz|8kHz  | ![](./reports/report_hist_8khz_100mhz.png)                 | 
+|150MHz|8kHz  | ![](./reports/report_hist_8khz_150mhz.png)                 |
+|100MHz|18kHz | ![](./reports/report_hist_18khz_100mhz.png)                | 
+|150MHz|18kHz | ![](./reports/report_hist_18khz_150mhz.png)                |
 
 Se puede observar que para 150MHz para ninguna de las frecuencias de corte del filtro se cumplen los requisitos de timing (sin utilizar ninguna estrategia de optimización en el proceso de implementación).
 
 También se añadió los IPs VIO e ILA para controlar en forma remota el diseño (solo se utilizó para el set de coeficientes de 8kHz), pueden observarse las instancias de dichos
-IPs en el archivo [top_design.v](./lab2-fir_timing/top_design.v).
+IPs en el archivo [top_design.v](./top_design.v).
