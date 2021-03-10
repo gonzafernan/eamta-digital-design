@@ -1,3 +1,15 @@
+/*
+ *  Module `filtro_fir`
+ *
+ *  Modificaciones: Se añadieron los coeficientes para frecuencias de
+ *  corte de 8kHz y 18kHz.
+ *
+ *  EAMTA 2021 - Digital Design
+ *  Laboratorio 2: Filtro FIR y analisis de reportes de timing.
+ *  Gonzalo G. Fernandez     09/03/2021
+ *  File: filtro_fir.v
+ */
+
 module filtro_fir
   #(
     parameter WW_INPUT  = 8,
@@ -28,8 +40,8 @@ module filtro_fir
    reg signed [WW_INPUT+WW_COEFF+4 -1:0] sum3_d;
    reg signed [WW_INPUT+WW_COEFF+1 -1:0] sum_d    [8:1];
 
-
-  // Coeffs c = [-1 1/2 -1/4 1/8]
+    /*
+    // fcut=6kHz    Coeffs c = [-1 1/2 -1/4 1/8]
     assign coeff[ 0] = 8'hFF;
     assign coeff[ 1] = 8'hFF;
     assign coeff[ 2] = 8'hFF;
@@ -44,6 +56,41 @@ module filtro_fir
     assign coeff[11] = 8'h00;
     assign coeff[12] = 8'hFF;
     assign coeff[13] = 8'hFF;
+    assign coeff[14] = 8'hFF;
+    */
+    /*
+    // fcut=8kHz
+    assign coeff[ 0] = 8'h00;
+    assign coeff[ 1] = 8'hFF;
+    assign coeff[ 2] = 8'hFF;
+    assign coeff[ 3] = 8'hFE;
+    assign coeff[ 4] = 8'h00;
+    assign coeff[ 5] = 8'h07;
+    assign coeff[ 6] = 8'h10;
+    assign coeff[ 7] = 8'h15;
+    assign coeff[ 8] = 8'h10;
+    assign coeff[ 9] = 8'h07;
+    assign coeff[10] = 8'h00;
+    assign coeff[11] = 8'hFE;
+    assign coeff[12] = 8'hFF;
+    assign coeff[13] = 8'hFF;
+    assign coeff[14] = 8'h00;
+    */
+    // fcut=18kHz
+    assign coeff[ 0] = 8'hFF;
+    assign coeff[ 1] = 8'h00;
+    assign coeff[ 2] = 8'hFF;
+    assign coeff[ 3] = 8'h00;
+    assign coeff[ 4] = 8'h03;
+    assign coeff[ 5] = 8'hF7;
+    assign coeff[ 6] = 8'h0D;
+    assign coeff[ 7] = 8'h30;
+    assign coeff[ 8] = 8'h0D;
+    assign coeff[ 9] = 8'hF7;
+    assign coeff[10] = 8'h03;
+    assign coeff[11] = 8'h00;
+    assign coeff[12] = 8'hFF;
+    assign coeff[13] = 8'h00;
     assign coeff[14] = 8'hFF;
    
   // Shift Register

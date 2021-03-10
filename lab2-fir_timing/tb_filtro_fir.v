@@ -1,9 +1,16 @@
-// EAMTA 2021 - Digital Design
-// Laboratorio 2: Filtro FIR y analisis de reportes de timing.
-// Gonzalo G. Fernandez     09/03/2021
-// File: tb_filtro_fir.v
-
-// TB FILTRO FIR MODULE
+/*
+ *  Module `tb_filtro_fir`
+ *
+ *  Testbench para verificacion del correcto funcionamiento del filtro FIR.
+ *  La generacion de señal se basa en una onda senoidal compuesta por dos 
+ *  frecuencias f1=17kHz y f2=1,5kHz. La frecuencia de corte del filtro es 
+ *  de 6kHz.
+ *
+ *  EAMTA 2021 - Digital Design
+ *  Laboratorio 2: Filtro FIR y analisis de reportes de timing.
+ *  Gonzalo G. Fernandez     09/03/2021
+ *  File: tb_filtro_fir.v
+ */
 
 `define NB_DATA     8
 `define NB_COUNT    10 
@@ -23,7 +30,7 @@ module tb_filtro_fir();
    reg                      clock               ;
 
    initial begin
-      /* CONDICIONES INICIALES */
+      // Condiciones iniciales
       clock             = 1'b0  ;
       i_reset           = 1'b1  ;
       i_en              = 1'b0  ;
