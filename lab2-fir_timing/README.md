@@ -53,7 +53,7 @@ Comparación de histogramas de slack:
 | fclk | fcut | Histograma                                                 |
 |------|------|------------------------------------------------------------|
 |100MHz|6kHz  | ![](./reports/report_hist_6khz_100mhz.png)                 | 
-|150MHz|6kHz  | ![](./report_hist_6khz_150mhz.png)                         |
+|150MHz|6kHz  | ![](./reports/report_hist_6khz_150mhz.png)                         |
 |100MHz|8kHz  | ![](./reports/report_hist_8khz_100mhz.png)                 | 
 |150MHz|8kHz  | ![](./reports/report_hist_8khz_150mhz.png)                 |
 |100MHz|18kHz | ![](./reports/report_hist_18khz_100mhz.png)                | 
