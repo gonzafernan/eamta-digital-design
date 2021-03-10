@@ -1,3 +1,14 @@
+/*
+ *  Module `top_design`
+ *
+ *  Modificaciones: Instancia de IPs VIO e ILA.
+ *
+ *  EAMTA 2021 - Digital Design
+ *  Laboratorio 2: Filtro FIR y analisis de reportes de timing.
+ *  Gonzalo G. Fernandez     10/03/2021
+ *  File: top_design.v
+ */
+
 module top_design(
 		  clock
 		  );
@@ -21,7 +32,7 @@ signal_generator
     u_signal_generator
        (
 	.i_clock(clock),
-	.i_reset(~reset),
+	.i_reset(reset),
 	.o_signal(w_signal)
 	);
 
@@ -29,7 +40,7 @@ filtro_fir
     u_filtro_fir
     (
     .clk        (clock),
-    .i_srst     (~reset),
+    .i_srst     (reset),
     .i_en       (1'b1),
     .i_data     (w_signal),
     .o_data     (w_filtered_signal)

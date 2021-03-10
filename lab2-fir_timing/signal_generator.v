@@ -1,3 +1,15 @@
+/*
+ *  Module `signal_generator`
+ *
+ *  Modificaciones: Ruta absoluta a archivo 'mem.hex' para generacion de señal.
+ *  Fue necesario dos barras invertidas para lograr levantar el archivo.
+ *
+ *  EAMTA 2021 - Digital Design
+ *  Laboratorio 2: Filtro FIR y analisis de reportes de timing.
+ *  Gonzalo G. Fernandez     10/03/2021
+ *  File: signal_generator.v
+ */
+
 module signal_generator(
                  i_clock,
                  i_reset ,
@@ -9,7 +21,7 @@ module signal_generator(
    parameter NB_SEL     = 2;
 
    parameter NB_COUNT   = 10;
-   parameter MEM_INIT_FILE = "D:\digital_design_course\eamta-digital-design\lab2-fir_timing\mem.hex";
+   parameter MEM_INIT_FILE = "D:\\digital_design_course\\eamta-digital-design\\lab2-fir_timing\\mem.hex";
 
    // Ports
    output [NB_DATA - 1 : 0] o_signal;

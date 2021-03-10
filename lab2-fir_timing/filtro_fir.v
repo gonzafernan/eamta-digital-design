@@ -58,7 +58,7 @@ module filtro_fir
     assign coeff[13] = 8'hFF;
     assign coeff[14] = 8'hFF;
     */
-    /*
+    
     // fcut=8kHz
     assign coeff[ 0] = 8'h00;
     assign coeff[ 1] = 8'hFF;
@@ -75,7 +75,8 @@ module filtro_fir
     assign coeff[12] = 8'hFF;
     assign coeff[13] = 8'hFF;
     assign coeff[14] = 8'h00;
-    */
+    
+    /*
     // fcut=18kHz
     assign coeff[ 0] = 8'hFF;
     assign coeff[ 1] = 8'h00;
@@ -92,7 +93,8 @@ module filtro_fir
     assign coeff[12] = 8'hFF;
     assign coeff[13] = 8'h00;
     assign coeff[14] = 8'hFF;
-   
+    */
+    
   // Shift Register
   always @(posedge clk) begin
     if (i_srst == 1'b1) begin
