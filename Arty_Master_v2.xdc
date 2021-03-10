@@ -6,7 +6,8 @@
 ## Clock signal
 
 set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { clock }]; #IO_L12P_T1_MRCC_35 Sch=gclk[100]
-create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports { clock }];
+create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports { clock }]; # fclk=100MHz
+#create_clock -add -name sys_clk_pin -period 6.67 -waveform {0 3.33} [get_ports { clock }]; # fclk=150MHz
 
 ##Switches
 
