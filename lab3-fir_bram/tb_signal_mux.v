@@ -2,6 +2,7 @@
  *  Module `tb_signal_mux`
  *
  *  Testbench del multiplexor de señales generadas.
+ *  Integración con filtro FIR para señal seleccionada.
  *
  *  EAMTA 2021 - Digital Design
  *  Laboratorio 3: Integracion filtro FIR con memoria BRAM.
@@ -18,16 +19,17 @@ parameter NB_DATA   = 8;
 parameter NB_SEL    = 2;
 
 // Vars
-reg                             clock;      // Señal de clock
-reg                             reset;      // Señal de reset
-reg            [NB_SEL-1 : 0]   sel;        // Seleccion de señal
-wire    signed [NB_DATA-1 : 0]  w_signal;   // Salida de multiplexor
+reg                             clock;              // Señal de clock
+reg                             reset;              // Señal de reset
+reg             [NB_SEL-1 : 0]  sel;                // Seleccion de señal
+wire    signed  [NB_DATA-1 : 0] w_signal;           // Salida de multiplexor
+wire    signed  [NB_DATA-1 : 0] w_filtered_signal;  // Salida de filtro FIR
 
 // Señales generadas
-wire    signed [NB_DATA-1 : 0]  w_signal_1;
-wire    signed [NB_DATA-1 : 0]  w_signal_2;
-wire    signed [NB_DATA-1 : 0]  w_signal_3;
-wire    signed [NB_DATA-1 : 0]  w_signal_4;
+wire    signed  [NB_DATA-1 : 0]  w_signal_1;
+wire    signed  [NB_DATA-1 : 0]  w_signal_2;
+wire    signed  [NB_DATA-1 : 0]  w_signal_3;
+wire    signed  [NB_DATA-1 : 0]  w_signal_4;
 
 assign w_signal_1 = tb_signal_mux.u_signal_mux.w_signal_1;
 assign w_signal_2 = tb_signal_mux.u_signal_mux.w_signal_2;
@@ -55,6 +57,7 @@ end
 always
     #5 clock = ~clock;
 
+// Multiplexor de señales generadas
 signal_mux #
     (
     .NB_DATA(NB_DATA),
@@ -66,6 +69,17 @@ u_signal_mux
     .i_reset(~reset),
     .i_sel(sel),
     .o_signal(w_signal)
+    );
+
+// Filtro FIR de salida multiplexor
+fir_filter
+u_fir_filter
+    (
+    .i_clock(clock),
+    .i_en(1'b1),
+    .i_reset(~reset),
+    .i_signal(w_signal),
+    .o_signal(w_filtered_signal)
     );
 
 endmodule

@@ -87,7 +87,7 @@ end
 // Products
 generate
     assign prod[ 0] = coeff[ 0] * i_signal;
-    for (igen=0; igen<=14; igen=igen+1) begin
+    for (igen=1; igen<=14; igen=igen+1) begin
         assign prod[igen] = coeff[igen] * register[igen];
     end
 endgenerate

@@ -27,7 +27,7 @@ parameter MEM_INIT_FILE = "";
 // Ports
 input                           i_clock;
 input                           i_reset;
-output signed [NB_DATA-1 : 0]   o_signal;
+output  signed  [NB_DATA-1 : 0] o_signal;
 
 // Vars
 reg [NB_COUNT-1 : 0]    counter;
