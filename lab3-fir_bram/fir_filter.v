@@ -130,7 +130,13 @@ assign sum3 = sum2[ 1] + sum2[ 2];          //19.12 + 19.12 = 20.12
 always @(posedge i_clock)
     sum3_d <= sum3;
 
-SatTruncFP
+SatTruncFP #
+    (
+    .NB_XI(WW_INPUT+WW_COEFF+4),
+    .NBF_XI((WW_INPUT-2)*2),
+    .NB_XO(WW_OUTPUT),
+    .NBF_XO(WW_OUTPUT-2)
+    )
 inst_SatTruncFP_dataB
     (
     .i_data(sum3_d),

@@ -15,15 +15,16 @@
 module tb_signal_mux();
 
 // Parameters
-parameter NB_DATA   = 8;
-parameter NB_SEL    = 2;
+parameter NB_DATA       = 8;
+parameter NB_SEL        = 2;
+parameter NB_FILTER_OUT = 16;
 
 // Vars
-reg                             clock;              // Señal de clock
-reg                             reset;              // Señal de reset
-reg             [NB_SEL-1 : 0]  sel;                // Seleccion de señal
-wire    signed  [NB_DATA-1 : 0] w_signal;           // Salida de multiplexor
-wire    signed  [NB_DATA-1 : 0] w_filtered_signal;  // Salida de filtro FIR
+reg                                     clock;              // Señal de clock
+reg                                     reset;              // Señal de reset
+reg             [NB_SEL-1 : 0]          sel;                // Seleccion de señal
+wire    signed  [NB_DATA-1 : 0]         w_signal;           // Salida de multiplexor
+wire    signed  [NB_FILTER_OUT-1 : 0]   w_filtered_signal;  // Salida de filtro FIR
 
 // Señales generadas
 wire    signed  [NB_DATA-1 : 0]  w_signal_1;
@@ -71,8 +72,12 @@ u_signal_mux
     .o_signal(w_signal)
     );
 
-// Filtro FIR de salida multiplexor
-fir_filter
+// Filtro FIR a salida de multiplexor
+fir_filter #
+    (
+    .WW_INPUT(NB_DATA),
+    .WW_OUTPUT(NB_FILTER_OUT)
+    )
 u_fir_filter
     (
     .i_clock(clock),
