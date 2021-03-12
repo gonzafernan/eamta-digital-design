@@ -10,6 +10,9 @@
  *  - Señal 4: f1=1,5kHz y f2=4,25kHz (mem17khz.hex)
  *  Luego dichas señales son entrada de un multiplexor que permite la seleccion
  *  de una de ellas segun i_sel[1:0].
+ *  i_en permite la habilitacion y deshabilitacion de la generacion de señales.
+ *  Estando deshabilitado la señal conserva el ultimo valor, y aun se puede 
+ *  realizar cambios en la seleccion de señal.
  *
  *  Dependencias: modulo `signal_generator`
  *
@@ -23,6 +26,7 @@ module signal_mux(
         i_clock,
         i_reset,
         i_sel,
+        i_en,
         o_signal
     );
 
@@ -41,6 +45,7 @@ parameter MEM_SIG4_FILE = "D:\\digital_design_course\\eamta-digital-design\\lab3
 input                               i_clock;
 input                               i_reset;
 input           [NB_SEL-1 : 0]      i_sel;
+input                               i_en;
 output  signed  [NB_DATA-1 : 0]     o_signal;
 
 // Vars
@@ -60,7 +65,8 @@ signal_generator #
 u_signal_gen_1
     (
     .i_clock(i_clock),
-    .i_reset(i_reset), 
+    .i_reset(i_reset),
+    .i_en(i_en), 
     .o_signal(w_signal_1)
     );
 
@@ -74,7 +80,8 @@ signal_generator #
 u_signal_gen_2
     (
     .i_clock(i_clock),
-    .i_reset(i_reset), 
+    .i_reset(i_reset),
+    .i_en(i_en),  
     .o_signal(w_signal_2)
     );
 
@@ -88,7 +95,8 @@ signal_generator #
 u_signal_gen_3
     (
     .i_clock(i_clock),
-    .i_reset(i_reset), 
+    .i_reset(i_reset),
+    .i_en(i_en),  
     .o_signal(w_signal_3)
     );
 
@@ -102,7 +110,8 @@ signal_generator #
 u_signal_gen_4
     (
     .i_clock(i_clock),
-    .i_reset(i_reset), 
+    .i_reset(i_reset),
+    .i_en(i_en),  
     .o_signal(w_signal_4)
     );
 

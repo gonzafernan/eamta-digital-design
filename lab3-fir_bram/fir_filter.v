@@ -4,7 +4,10 @@
  *  Filtro FIR.
  *
  *  Modificaciones: Cambio en nombres de puertos. Incorporacion
- *  de bucles iterativos para simplificar codigo.
+ *  de bucles iterativos para simplificar codigo. 
+ *  Modificacion de parametros de punto fijo en saturador/truncador
+ *  asumiendo que la entrada al filtro es en formato punto fijo S(8, 6).
+ *  La salida por defecto del filtro es en formato S(16, 14).
  *
  *  EAMTA 2021 - Digital Design
  *  Laboratorio 3: Integracion filtro FIR con memoria BRAM.
@@ -132,9 +135,13 @@ always @(posedge i_clock)
 
 SatTruncFP #
     (
+    // Numero de bits de entrada al saturador/truncador (20)
     .NB_XI(WW_INPUT+WW_COEFF+4),
+    // Numero de bits fraccionales de entrada. Considerando datos S(8, 6), entonces 6*2=12    
     .NBF_XI((WW_INPUT-2)*2),
+    // Numero de bits de salida (16)
     .NB_XO(WW_OUTPUT),
+    // Numero de bits fraccionales de salida (14) para 1 bit de signo y 1 bit entero
     .NBF_XO(WW_OUTPUT-2)
     )
 inst_SatTruncFP_dataB

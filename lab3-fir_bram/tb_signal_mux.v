@@ -23,6 +23,7 @@ parameter NB_FILTER_OUT = 16;
 reg                                     clock;              // Señal de clock
 reg                                     reset;              // Señal de reset
 reg             [NB_SEL-1 : 0]          sel;                // Seleccion de señal
+reg                                     enable;             // Habilitacion de modulos
 wire    signed  [NB_DATA-1 : 0]         w_signal;           // Salida de multiplexor
 wire    signed  [NB_FILTER_OUT-1 : 0]   w_filtered_signal;  // Salida de filtro FIR
 
@@ -42,6 +43,7 @@ initial begin
     // Condiciones iniciales
     reset   = 1'b0;
     sel     = 2'b00;
+    enable  = 1'b1;
     clock   = 1'b1; 
     
     #100    reset   = 1'b1;   // Abandonar condicion de reset
@@ -51,7 +53,11 @@ initial begin
     #1000   sel     = 2'b10;
     #1000   sel     = 2'b11;
     
-    #1000 $finish;
+    // Test de habilitacion/deshabilitacion
+    #1000   enable  = 1'b0;
+    #500    enable  = 1'b1;
+    
+    #500 $finish;
 end
 
 // Generacion de onda de clock (100MHz)
@@ -69,6 +75,7 @@ u_signal_mux
     .i_clock(clock),
     .i_reset(~reset),
     .i_sel(sel),
+    .i_en(enable),
     .o_signal(w_signal)
     );
 
@@ -81,7 +88,7 @@ fir_filter #
 u_fir_filter
     (
     .i_clock(clock),
-    .i_en(1'b1),
+    .i_en(enable),
     .i_reset(~reset),
     .i_signal(w_signal),
     .o_signal(w_filtered_signal)
