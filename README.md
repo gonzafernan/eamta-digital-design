@@ -16,6 +16,7 @@ During this process it will be verified that all constraints are met and finally
 ## Content
 - [Lab 1: Shift and flash of RGB LEDs](./lab1-shift_n_flash_leds)
 - [Lab 2: Filtro FIR y análisis de reportes de timing](./lab2-fir_timing)
+- [Lab 3: Integración del filtro FIR con la memoria BRAM](./lab3-fir_bram)
 
 ## About EAMTA
 The Argentine School of Micro-Nanoelectronics, Technology and Applications is a one-week school where undergraduate and graduate students attend intensive courses on topics related to the area of micro-nano electronics, with the aim of disseminating this area of knowledge, deepening the knowledge of professionals and academics, and promoting the development of related technology in the country and the region.
