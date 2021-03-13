@@ -6,7 +6,7 @@
  *  en botones, por lo que se considera su vuelta a reposo (modificacion
  *  de estado con flanco ascendente).
  *
- *  Dependencias: modulo `signal_mux`
+ *  Dependencias: modulos `signal_mux`, `fir_filter` y `ram_save`.
  *
  *  EAMTA 2021 - Digital Design
  *  Laboratorio 3: Integracion filtro FIR con memoria BRAM.

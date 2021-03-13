@@ -1,0 +1,636 @@
+
+*** Running vivado
+    with args -log top_vio_ila.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_vio_ila.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source top_vio_ila.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2019.2/data/ip'.
+Command: synth_design -top top_vio_ila -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12240 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 852.508 ; gain = 234.176
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_vio_ila' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/top_vio_ila.v:14]
+INFO: [Synth 8-6157] synthesizing module 'top' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/top.v:17]
+	Parameter NB_SEL bound to: 2 - type: integer 
+	Parameter NB_DATA bound to: 8 - type: integer 
+	Parameter NB_FILTER_OUT bound to: 16 - type: integer 
+	Parameter NB_ADDR bound to: 10 - type: integer 
+	Parameter RAM_INIT_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\ram_init16_1024.txt - type: string 
+INFO: [Synth 8-6157] synthesizing module 'signal_mux' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_mux.v:25]
+	Parameter NB_DATA bound to: 8 - type: integer 
+	Parameter NB_COUNT bound to: 10 - type: integer 
+	Parameter NB_SEL bound to: 2 - type: integer 
+	Parameter MEM_SIG1_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem17khz.hex - type: string 
+	Parameter MEM_SIG2_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem8p5khz.hex - type: string 
+	Parameter MEM_SIG3_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem5p666khz.hex - type: string 
+	Parameter MEM_SIG4_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem4p25khz.hex - type: string 
+INFO: [Synth 8-6157] synthesizing module 'signal_generator' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:19]
+	Parameter NB_DATA bound to: 8 - type: integer 
+	Parameter NB_COUNT bound to: 10 - type: integer 
+	Parameter MEM_INIT_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem17khz.hex - type: string 
+INFO: [Synth 8-3876] $readmem data file 'D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem17khz.hex' is read successfully [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'signal_generator' (1#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:19]
+INFO: [Synth 8-6157] synthesizing module 'signal_generator__parameterized0' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:19]
+	Parameter NB_DATA bound to: 8 - type: integer 
+	Parameter NB_COUNT bound to: 10 - type: integer 
+	Parameter MEM_INIT_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem8p5khz.hex - type: string 
+INFO: [Synth 8-3876] $readmem data file 'D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem8p5khz.hex' is read successfully [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'signal_generator__parameterized0' (1#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:19]
+INFO: [Synth 8-6157] synthesizing module 'signal_generator__parameterized1' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:19]
+	Parameter NB_DATA bound to: 8 - type: integer 
+	Parameter NB_COUNT bound to: 10 - type: integer 
+	Parameter MEM_INIT_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem5p666khz.hex - type: string 
+INFO: [Synth 8-3876] $readmem data file 'D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem5p666khz.hex' is read successfully [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'signal_generator__parameterized1' (1#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:19]
+INFO: [Synth 8-6157] synthesizing module 'signal_generator__parameterized2' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:19]
+	Parameter NB_DATA bound to: 8 - type: integer 
+	Parameter NB_COUNT bound to: 10 - type: integer 
+	Parameter MEM_INIT_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem4p25khz.hex - type: string 
+INFO: [Synth 8-3876] $readmem data file 'D:\digital_design_course\eamta-digital-design\lab3-fir_bram\signals\mem4p25khz.hex' is read successfully [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'signal_generator__parameterized2' (1#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_generator.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'signal_mux' (2#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/signal_mux.v:25]
+INFO: [Synth 8-6157] synthesizing module 'fir_filter' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:18]
+	Parameter WW_INPUT bound to: 8 - type: integer 
+	Parameter WW_OUTPUT bound to: 16 - type: integer 
+	Parameter WW_COEFF bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'SatTruncFP' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/SatTruncFP.v:1]
+	Parameter NB_XI bound to: 20 - type: integer 
+	Parameter NBF_XI bound to: 12 - type: integer 
+	Parameter NB_XO bound to: 16 - type: integer 
+	Parameter NBF_XO bound to: 14 - type: integer 
+	Parameter NBI_XI bound to: 8 - type: integer 
+	Parameter NBI_XO bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'SatTruncFP' (3#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/SatTruncFP.v:1]
+INFO: [Synth 8-4471] merging register 'prod_d_reg[3][15:0]' into 'prod_d_reg[11][15:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:100]
+WARNING: [Synth 8-6014] Unused sequential element prod_d_reg[3] was removed.  [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:100]
+INFO: [Synth 8-6155] done synthesizing module 'fir_filter' (4#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:18]
+INFO: [Synth 8-6157] synthesizing module 'ram_save' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/ram_save.v:1]
+	Parameter NB_ADDR bound to: 10 - type: integer 
+	Parameter NB_DATA bound to: 16 - type: integer 
+	Parameter INIT_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\ram_init16_1024.txt - type: string 
+	Parameter NB_COUNTER bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ram_fsm' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/ram_fsm.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ram_fsm' (5#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/ram_fsm.v:3]
+INFO: [Synth 8-6157] synthesizing module 'bram' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/bram.v:4]
+INFO: [Synth 8-5811] Detected attribute (* ram_style  = "block" *) on module bram 
+	Parameter NB_ADDR bound to: 10 - type: integer 
+	Parameter NB_DATA bound to: 16 - type: integer 
+	Parameter INIT_FILE bound to: D:\digital_design_course\eamta-digital-design\lab3-fir_bram\ram_init16_1024.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file 'D:\digital_design_course\eamta-digital-design\lab3-fir_bram\ram_init16_1024.txt' is read successfully [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/bram.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'bram' (6#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/bram.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ram_save' (7#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/ram_save.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'top' (8#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/top.v:17]
+INFO: [Synth 8-6157] synthesizing module 'vio' [D:/digital_design_course/lab3/lab3.srcs/sources_1/bd/vio/synth/vio.v:13]
+INFO: [Synth 8-6157] synthesizing module 'vio_vio_0_0' [D:/digital_design_course/lab3/lab3.runs/synth_1/.Xil/Vivado-13428-DESKTOP-PB08CQI/realtime/vio_vio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vio_vio_0_0' (9#1) [D:/digital_design_course/lab3/lab3.runs/synth_1/.Xil/Vivado-13428-DESKTOP-PB08CQI/realtime/vio_vio_0_0_stub.v:6]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'vio_0'. This will prevent further optimization [D:/digital_design_course/lab3/lab3.srcs/sources_1/bd/vio/synth/vio.v:40]
+INFO: [Synth 8-6155] done synthesizing module 'vio' (10#1) [D:/digital_design_course/lab3/lab3.srcs/sources_1/bd/vio/synth/vio.v:13]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/top_vio_ila.v:54]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [D:/digital_design_course/lab3/lab3.runs/synth_1/.Xil/Vivado-13428-DESKTOP-PB08CQI/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (11#1) [D:/digital_design_course/lab3/lab3.runs/synth_1/.Xil/Vivado-13428-DESKTOP-PB08CQI/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_top'. This will prevent further optimization [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/top_vio_ila.v:30]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ila_0'. This will prevent further optimization [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/top_vio_ila.v:54]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'vio_0'. This will prevent further optimization [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/top_vio_ila.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'top_vio_ila' (12#1) [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/top_vio_ila.v:14]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 928.320 ; gain = 309.988
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 928.320 ; gain = 309.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 928.320 ; gain = 309.988
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 928.320 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/digital_design_course/lab3/lab3.srcs/sources_1/bd/vio/ip/vio_vio_0_0/vio_vio_0_0/vio_vio_0_0_in_context.xdc] for cell 'vio_0/vio_0'
+Finished Parsing XDC File [d:/digital_design_course/lab3/lab3.srcs/sources_1/bd/vio/ip/vio_vio_0_0/vio_vio_0_0/vio_vio_0_0_in_context.xdc] for cell 'vio_0/vio_0'
+Parsing XDC File [d:/digital_design_course/lab3/lab3.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'u_ila_0'
+Finished Parsing XDC File [d:/digital_design_course/lab3/lab3.srcs/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'u_ila_0'
+Parsing XDC File [D:/digital_design_course/eamta-digital-design/Arty_Master_v2.xdc]
+Finished Parsing XDC File [D:/digital_design_course/eamta-digital-design/Arty_Master_v2.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/digital_design_course/eamta-digital-design/Arty_Master_v2.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_vio_ila_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_vio_ila_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/digital_design_course/lab3/lab3.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/digital_design_course/lab3/lab3.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1021.645 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 1021.645 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1021.645 ; gain = 403.312
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1021.645 ; gain = 403.312
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for vio_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for vio_0/vio_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for u_ila_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1021.645 ; gain = 403.312
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1021.645 ; gain = 403.312
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input     19 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 10    
++---Registers : 
+	               20 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	               10 Bit    Registers := 11    
+	                8 Bit    Registers := 17    
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---RAMs : 
+	              16K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module signal_generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+Module signal_generator__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+Module signal_generator__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+Module signal_generator__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
+Module signal_mux 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+Module SatTruncFP 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module fir_filter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input     19 Bit       Adders := 2     
++---Registers : 
+	               20 Bit    Registers := 1     
+	                8 Bit    Registers := 16    
+Module ram_fsm 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+Module bram 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---RAMs : 
+	              16K Bit         RAMs := 1     
+Module ram_save 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
+Module top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[1][7:0]' into 'u_fir_filter/register_reg[1][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[6][7:0]' into 'u_fir_filter/register_reg[6][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[4][7:0]' into 'u_fir_filter/register_reg[4][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[1][7:0]' into 'u_fir_filter/register_reg[1][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[2][7:0]' into 'u_fir_filter/register_reg[2][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[7][7:0]' into 'u_fir_filter/register_reg[7][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[5][7:0]' into 'u_fir_filter/register_reg[5][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/prod_d_reg[11][15:0]' into 'u_fir_filter/prod_d_reg[11][15:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:100]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[3][7:0]' into 'u_fir_filter/register_reg[3][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[8][7:0]' into 'u_fir_filter/register_reg[8][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[4][7:0]' into 'u_fir_filter/register_reg[4][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[9][7:0]' into 'u_fir_filter/register_reg[9][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[5][7:0]' into 'u_fir_filter/register_reg[5][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[6][7:0]' into 'u_fir_filter/register_reg[6][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[7][7:0]' into 'u_fir_filter/register_reg[7][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[8][7:0]' into 'u_fir_filter/register_reg[8][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[9][7:0]' into 'u_fir_filter/register_reg[9][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[10][7:0]' into 'u_fir_filter/register_reg[10][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[11][7:0]' into 'u_fir_filter/register_reg[11][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[12][7:0]' into 'u_fir_filter/register_reg[12][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+INFO: [Synth 8-4471] merging register 'u_fir_filter/register_reg[13][7:0]' into 'u_fir_filter/register_reg[13][7:0]' [D:/digital_design_course/eamta-digital-design/lab3-fir_bram/fir_filter.v:77]
+DSP Report: Generating DSP u_fir_filter/prod_d_reg[12], operation Mode is: (A''*(B:0x3ffff))'.
+DSP Report: register u_fir_filter/register_reg[11] is absorbed into DSP u_fir_filter/prod_d_reg[12].
+DSP Report: register u_fir_filter/register_reg[12] is absorbed into DSP u_fir_filter/prod_d_reg[12].
+DSP Report: register u_fir_filter/prod_d_reg[12] is absorbed into DSP u_fir_filter/prod_d_reg[12].
+DSP Report: operator u_fir_filter/prod[12] is absorbed into DSP u_fir_filter/prod_d_reg[12].
+DSP Report: Generating DSP u_fir_filter/sum_d_reg[8], operation Mode is: (ACIN''*(B:0x3ffff))'.
+DSP Report: register u_fir_filter/register_reg[13] is absorbed into DSP u_fir_filter/sum_d_reg[8].
+DSP Report: register u_fir_filter/register_reg[14] is absorbed into DSP u_fir_filter/sum_d_reg[8].
+DSP Report: register u_fir_filter/sum_d_reg[8] is absorbed into DSP u_fir_filter/sum_d_reg[8].
+DSP Report: register u_fir_filter/prod_d_reg[14] is absorbed into DSP u_fir_filter/sum_d_reg[8].
+DSP Report: operator u_fir_filter/prod[14] is absorbed into DSP u_fir_filter/sum_d_reg[8].
+DSP Report: Generating DSP u_fir_filter/prod_d_reg[8], operation Mode is: (A''*(B:0xd))'.
+DSP Report: register u_fir_filter/register_reg[7] is absorbed into DSP u_fir_filter/prod_d_reg[8].
+DSP Report: register u_fir_filter/register_reg[8] is absorbed into DSP u_fir_filter/prod_d_reg[8].
+DSP Report: register u_fir_filter/prod_d_reg[8] is absorbed into DSP u_fir_filter/prod_d_reg[8].
+DSP Report: operator u_fir_filter/prod[8] is absorbed into DSP u_fir_filter/prod_d_reg[8].
+DSP Report: Generating DSP u_fir_filter/sum_d_reg[5], operation Mode is: (PCIN+(ACIN2*(B:0x8))')'.
+DSP Report: register u_fir_filter/register_reg[9] is absorbed into DSP u_fir_filter/sum_d_reg[5].
+DSP Report: register u_fir_filter/sum_d_reg[5] is absorbed into DSP u_fir_filter/sum_d_reg[5].
+DSP Report: register u_fir_filter/prod_d_reg[9] is absorbed into DSP u_fir_filter/sum_d_reg[5].
+DSP Report: operator u_fir_filter/sum[5] is absorbed into DSP u_fir_filter/sum_d_reg[5].
+DSP Report: operator u_fir_filter/prod[9] is absorbed into DSP u_fir_filter/sum_d_reg[5].
+DSP Report: Generating DSP u_fir_filter/sum_d_reg[6], operation Mode is: (C:0x0)'+(ACIN2*(B:0x3))'.
+DSP Report: register u_fir_filter/prod_d_reg[11] is absorbed into DSP u_fir_filter/sum_d_reg[6].
+DSP Report: register u_fir_filter/register_reg[10] is absorbed into DSP u_fir_filter/sum_d_reg[6].
+DSP Report: register u_fir_filter/sum_d_reg[6] is absorbed into DSP u_fir_filter/sum_d_reg[6].
+DSP Report: register u_fir_filter/prod_d_reg[10] is absorbed into DSP u_fir_filter/sum_d_reg[6].
+DSP Report: operator u_fir_filter/sum[6] is absorbed into DSP u_fir_filter/sum_d_reg[6].
+DSP Report: operator u_fir_filter/prod[10] is absorbed into DSP u_fir_filter/sum_d_reg[6].
+DSP Report: Generating DSP u_fir_filter/sum1[3], operation Mode is: PCIN+A:B.
+DSP Report: operator u_fir_filter/sum1[3] is absorbed into DSP u_fir_filter/sum1[3].
+DSP Report: Generating DSP u_fir_filter/sum_d_reg[2], operation Mode is: (C:0x0)'+(A''*(B:0x3ffff))'.
+DSP Report: register u_fir_filter/register_reg[1] is absorbed into DSP u_fir_filter/sum_d_reg[2].
+DSP Report: register u_fir_filter/register_reg[2] is absorbed into DSP u_fir_filter/sum_d_reg[2].
+DSP Report: register u_fir_filter/prod_d_reg[11] is absorbed into DSP u_fir_filter/sum_d_reg[2].
+DSP Report: register u_fir_filter/sum_d_reg[2] is absorbed into DSP u_fir_filter/sum_d_reg[2].
+DSP Report: register u_fir_filter/prod_d_reg[2] is absorbed into DSP u_fir_filter/sum_d_reg[2].
+DSP Report: operator u_fir_filter/sum[2] is absorbed into DSP u_fir_filter/sum_d_reg[2].
+DSP Report: operator u_fir_filter/prod[2] is absorbed into DSP u_fir_filter/sum_d_reg[2].
+DSP Report: Generating DSP u_fir_filter/sum_d_reg[3], operation Mode is: (C'+(ACIN''*(B:0x3))')'.
+DSP Report: register u_fir_filter/register_reg[3] is absorbed into DSP u_fir_filter/sum_d_reg[3].
+DSP Report: register u_fir_filter/register_reg[4] is absorbed into DSP u_fir_filter/sum_d_reg[3].
+DSP Report: register u_fir_filter/prod_d_reg[5] is absorbed into DSP u_fir_filter/sum_d_reg[3].
+DSP Report: register u_fir_filter/sum_d_reg[3] is absorbed into DSP u_fir_filter/sum_d_reg[3].
+DSP Report: register u_fir_filter/prod_d_reg[4] is absorbed into DSP u_fir_filter/sum_d_reg[3].
+DSP Report: operator u_fir_filter/sum[3] is absorbed into DSP u_fir_filter/sum_d_reg[3].
+DSP Report: operator u_fir_filter/prod[4] is absorbed into DSP u_fir_filter/sum_d_reg[3].
+DSP Report: Generating DSP u_fir_filter/prod_d_reg[6], operation Mode is: (ACIN''*(B:0xd))'.
+DSP Report: register u_fir_filter/register_reg[5] is absorbed into DSP u_fir_filter/prod_d_reg[6].
+DSP Report: register u_fir_filter/register_reg[6] is absorbed into DSP u_fir_filter/prod_d_reg[6].
+DSP Report: register u_fir_filter/prod_d_reg[6] is absorbed into DSP u_fir_filter/prod_d_reg[6].
+DSP Report: operator u_fir_filter/prod[6] is absorbed into DSP u_fir_filter/prod_d_reg[6].
+DSP Report: Generating DSP u_fir_filter/sum_d_reg[4], operation Mode is: (PCIN+(A''*(B:0x10))')'.
+DSP Report: register u_fir_filter/register_reg[6] is absorbed into DSP u_fir_filter/sum_d_reg[4].
+DSP Report: register u_fir_filter/register_reg[7] is absorbed into DSP u_fir_filter/sum_d_reg[4].
+DSP Report: register u_fir_filter/sum_d_reg[4] is absorbed into DSP u_fir_filter/sum_d_reg[4].
+DSP Report: register u_fir_filter/prod_d_reg[7] is absorbed into DSP u_fir_filter/sum_d_reg[4].
+DSP Report: operator u_fir_filter/sum[4] is absorbed into DSP u_fir_filter/sum_d_reg[4].
+DSP Report: operator u_fir_filter/prod[7] is absorbed into DSP u_fir_filter/sum_d_reg[4].
+DSP Report: Generating DSP u_fir_filter/sum1[2], operation Mode is: PCIN+A:B.
+DSP Report: operator u_fir_filter/sum1[2] is absorbed into DSP u_fir_filter/sum1[2].
+INFO: [Synth 8-4652] Swapped enable and write-enable on 1 RAM instances of RAM ram_reg to conserve power
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1021.645 ; gain = 403.312
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-----------------+------------+---------------+----------------+
+|Module Name      | RTL Object | Depth x Width | Implemented As | 
++-----------------+------------+---------------+----------------+
+|signal_generator | p_0_out    | 1024x8        | LUT            | 
+|signal_generator | p_0_out    | 1024x8        | LUT            | 
+|signal_generator | p_0_out    | 1024x8        | LUT            | 
+|signal_generator | p_0_out    | 1024x8        | LUT            | 
+|top              | p_0_out    | 1024x8        | LUT            | 
+|top              | p_0_out    | 1024x8        | LUT            | 
+|top              | p_0_out    | 1024x8        | LUT            | 
+|top              | p_0_out    | 1024x8        | LUT            | 
++-----------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping	Report (see note below)
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name               | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|u_top/\u_ram_save/u_bram  | ram_reg    | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping                 | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fir_filter  | (A''*(B:0x3ffff))'          | 8      | 1      | -      | -      | 9      | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|fir_filter  | (ACIN''*(B:0x3ffff))'       | 8      | 1      | -      | -      | 9      | 2    | 0    | -    | -    | -     | 1    | 1    | 
+|fir_filter  | (A''*(B:0xd))'              | 8      | 5      | -      | -      | 13     | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|top         | (PCIN+(ACIN2*(B:0x8))')'    | 8      | 5      | -      | -      | 17     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fir_filter  | (C:0x0)'+(ACIN2*(B:0x3))'   | 8      | 3      | 16     | -      | 17     | 1    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | PCIN+A:B                    | 30     | 18     | -      | -      | -1     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (C:0x0)'+(A''*(B:0x3ffff))' | 8      | 1      | 16     | -      | 17     | 2    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | (C'+(ACIN''*(B:0x3))')'     | 8      | 3      | 13     | -      | 17     | 2    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | (ACIN''*(B:0xd))'           | 8      | 5      | -      | -      | 13     | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|fir_filter  | (PCIN+(A''*(B:0x10))')'     | 8      | 6      | -      | -      | 17     | 2    | 0    | -    | -    | -     | 1    | 1    | 
+|top         | PCIN+A:B                    | 30     | 18     | -      | -      | -1     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1075.137 ; gain = 456.805
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1077.859 ; gain = 459.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name               | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|u_top/\u_ram_save/u_bram  | ram_reg    | 1 K x 16(READ_FIRST)   | W |   | 1 K x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++--------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7053] The timing for the instance u_top/u_ram_save/u_bram/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1096.902 ; gain = 478.570
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1112.160 ; gain = 493.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1112.160 ; gain = 493.828
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1112.160 ; gain = 493.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1112.160 ; gain = 493.828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1112.176 ; gain = 493.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1112.176 ; gain = 493.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                        | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top         | u_fir_filter/register_reg[5][7] | 4      | 16    | YES          | NO                 | YES               | 16     | 0       | 
++------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |vio_vio_0_0   |         1|
+|2     |ila_0         |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |ila_0       |     1|
+|2     |vio_vio_0_0 |     1|
+|3     |BUFG        |     1|
+|4     |CARRY4      |    35|
+|5     |DSP48E1_1   |     2|
+|6     |DSP48E1_2   |     2|
+|7     |DSP48E1_3   |     2|
+|8     |DSP48E1_4   |     2|
+|9     |DSP48E1_6   |     2|
+|10    |DSP48E1_7   |     1|
+|11    |LUT1        |    12|
+|12    |LUT2        |   134|
+|13    |LUT3        |    19|
+|14    |LUT4        |    13|
+|15    |LUT5        |    35|
+|16    |LUT6        |   473|
+|17    |MUXF7       |    74|
+|18    |MUXF8       |    37|
+|19    |RAMB18E1    |     1|
+|20    |SRL16E      |    16|
+|21    |FDCE        |    54|
+|22    |FDRE        |   212|
+|23    |IBUF        |     1|
++------+------------+------+
+
+Report Instance Areas: 
++------+---------------------+---------------------------------+------+
+|      |Instance             |Module                           |Cells |
++------+---------------------+---------------------------------+------+
+|1     |top                  |                                 |  1134|
+|2     |  u_top              |top                              |  1125|
+|3     |    u_fir_filter     |fir_filter                       |   381|
+|4     |    u_ram_save       |ram_save                         |    55|
+|5     |      u_bram         |bram                             |     1|
+|6     |      u_ram_fsm      |ram_fsm                          |     5|
+|7     |    u_signal_mux     |signal_mux                       |   662|
+|8     |      u_signal_gen_1 |signal_generator                 |   198|
+|9     |      u_signal_gen_2 |signal_generator__parameterized0 |   129|
+|10    |      u_signal_gen_3 |signal_generator__parameterized1 |   183|
+|11    |      u_signal_gen_4 |signal_generator__parameterized2 |   127|
+|12    |  vio_0              |vio                              |     6|
++------+---------------------+---------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1112.176 ; gain = 493.844
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 1112.176 ; gain = 400.520
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 1112.176 ; gain = 493.844
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1124.219 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 158 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1124.219 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+79 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 1124.219 ; gain = 781.676
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1124.219 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/digital_design_course/lab3/lab3.runs/synth_1/top_vio_ila.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_vio_ila_utilization_synth.rpt -pb top_vio_ila_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 13 02:20:36 2021...
