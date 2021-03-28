@@ -24,20 +24,19 @@ module button_logic(
 parameter N_BUTTON  = 1;                // Cantidad de pulsadores
 
 // Ports
-input                       i_clock;    // Señal de clock
-input                       i_reset;    // Señal de reset asincrono
-input   [N_BUTTON-1 : 0]    i_signal;   // Entrada pulsador
-output  [N_BUTTON-1 : 0]    o_state;    // Salida estado asociado a pulsador
+input                           i_clock;    // Señal de clock
+input                           i_reset;    // Señal de reset asincrono
+input       [N_BUTTON-1 : 0]    i_signal;   // Entrada pulsador
+output  reg [N_BUTTON-1 : 0]    o_state;    // Salida estado asociado a pulsador
 
 // Vars
 reg     [N_BUTTON-1 : 0]    reg_prev_state;  // Registro estado previo asociado a pulsador
-reg     [N_BUTTON-1 : 0]    reg_state;      // Registro estado asociado a pulsador
 
 integer i = 0;
 
 always @(posedge i_clock or posedge i_reset) begin
     if (i_reset == 1'b1) begin
-        reg_state <= {N_BUTTON{1'b0}};
+        o_state <= {N_BUTTON{1'b0}};
     end
     else begin
         // Guardar estado previo de los pulsadores para comparar en siguiente clock
@@ -45,12 +44,10 @@ always @(posedge i_clock or posedge i_reset) begin
         // Comparacion con estado anterior
         for (i=0; i<N_BUTTON; i=i+1) begin
             if (i_signal[i] == 1'b1 && reg_prev_state[i] == 1'b0) begin
-                reg_state[i] <= ~reg_state[i]; // Conmutacion de estado
+                o_state[i] <= ~o_state[i]; // Conmutacion de estado
             end
         end
     end
 end
-
-assign o_state = reg_state; // salida registrada
 
 endmodule
