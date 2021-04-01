@@ -22,7 +22,7 @@
  *  - i_enable[3] permite la seleccion de la operacion aritmetica a realizar, ya sea 
  *      adicion (0) o multiplicacion (1).
  *
- *  Con en el laboratorio 3, se tienen las mismas salidas asociadas a las memorias: 
+ *  Como en el laboratorio 3, se tienen las mismas salidas asociadas a las memorias: 
  *  *o_log_ram_full* flag que indica que se escribio la memoria completa, y 
  *  *o_log_data_from_ram* que es el dato leido de la memoria
  *
