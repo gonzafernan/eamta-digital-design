@@ -52,7 +52,7 @@ parameter   NB_DATA     = 8;
 parameter   NBF_DATA    = 6;
 parameter   NB_LOG_DATA = 16;
 parameter   NB_ADDR     = 10;
-parameter RAM_INIT_FILE = "D:\\digital_design_course\\eamta-digital-design\\lab3-fir_bram\\ram_init16_1024.txt";
+parameter RAM_INIT_FILE = "D:\\digital_design_course\\eamta-digital-design\\ram_init16_1024.txt";
 
 // Ports
 input                       i_clock;                // System clock

@@ -28,7 +28,7 @@ parameter NB_SEL        = 2;    // Cant. bits de seleccion señal generada
 parameter NB_DATA       = 8;    // Cant. bits dato señal generada (hex 8 bits en archivo formato S(8, 6))
 parameter NB_FILTER_OUT = 16;   // Cant. bits de salida del filtro FIR (formato S(16, 14))
 parameter NB_ADDR       = 10;
-parameter RAM_INIT_FILE = "D:\\digital_design_course\\eamta-digital-design\\lab3-fir_bram\\ram_init16_1024.txt";
+parameter RAM_INIT_FILE = "D:\\digital_design_course\\eamta-digital-design\\ram_init16_1024.txt";
 
 // Ports
 input                           i_clock;                // System clock

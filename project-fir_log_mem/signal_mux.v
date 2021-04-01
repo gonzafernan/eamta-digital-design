@@ -36,10 +36,10 @@ parameter NB_COUNT  = 10;
 parameter NB_SEL    = 2;
 
 // Signals files
-parameter MEM_SIG1_FILE = "D:\\digital_design_course\\eamta-digital-design\\lab3-fir_bram\\signals\\mem17khz.hex";
-parameter MEM_SIG2_FILE = "D:\\digital_design_course\\eamta-digital-design\\lab3-fir_bram\\signals\\mem8p5khz.hex";
-parameter MEM_SIG3_FILE = "D:\\digital_design_course\\eamta-digital-design\\lab3-fir_bram\\signals\\mem5p666khz.hex";
-parameter MEM_SIG4_FILE = "D:\\digital_design_course\\eamta-digital-design\\lab3-fir_bram\\signals\\mem4p25khz.hex";
+parameter MEM_SIG1_FILE = "D:\\digital_design_course\\eamta-digital-design\\signals\\mem17khz.hex";
+parameter MEM_SIG2_FILE = "D:\\digital_design_course\\eamta-digital-design\\signals\\mem8p5khz.hex";
+parameter MEM_SIG3_FILE = "D:\\digital_design_course\\eamta-digital-design\\signals\\mem5p666khz.hex";
+parameter MEM_SIG4_FILE = "D:\\digital_design_course\\eamta-digital-design\\signals\\mem4p25khz.hex";
 
 // Ports
 input                               i_clock;
