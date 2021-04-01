@@ -174,3 +174,24 @@ Pueden observarse las dos BRAM utilizadas en el proyecto.
 |top         | gen_fir0/u_fir_filter/register_reg[5][7] | 4      | 16    | YES          | NO                 | YES               | 16     | 0       |
 
 Puede observarse que los shift register se utilizan en la síntesis de los filtros FIR.
+
+### Implementación
+
+Comparación de slack:
+
+|fclk  | Worst Negative Slack (WNS) | Total Negative Slack (TNS) | Worst Hold Slack (WHS) | Worst Pulse Width Slack (WPWS) |
+|------|----------------------------|----------------------------|------------------------|--------------------------------|
+|100MHz| 0.544 ns                   | 0.000 ns                   | 0.031 ns               | 3.750 ns                       |
+|200MHz| **-2.650 ns**              | **-99.087 ns**             | 0.036 ns               | 1.116 ns                       |
+
+Comparación de histogramas de slack:
+
+- Para frecuencia de clock de 100MHz:
+
+![](./implementation/timing_histogram_100MHz.png)
+
+- Para frecuencia de clock de 200MHz:
+
+![](./implementation/timing_histogram_200MHz.png)
+
+Puede observarse que para un clock con frecuencia de 200MHz el timing falla, los requerimientos no se cumplen. Por lo tanto, la implementación en el hardware fue para 100MHz.
