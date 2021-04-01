@@ -4,10 +4,10 @@
 El objetivo es realzar la integración del filtro FIR con la memoria BRAM.
 
 Se implementó un generador de señales con la capacidad de transmitir cuatro tipos de señales donde la frecuencia de muestreo es fs=48kHz:
-- Señal 1: f1=1,5kHz y f2=17kHz (archivo [mem17khz.hex](./signals/mem17khz.hex))
-- Señal 2: f1=1,5kHz y f2=8,5kHz (archivo [mem8p5khz.hex](./signals/mem8p5khz.hex))
-- Señal 3: f1=1,5kHz y f2=5,66kHz (archivo [mem5p66khz.hex](./signals/mem5p66khz.hex))
-- Señal 4: f1=1,5kHz y f2=4,25kHz (archivo [mem4p25khz.hex](./signals/mem4p25khz.hex))
+- Señal 1: f1=1,5kHz y f2=17kHz (archivo [mem17khz.hex](../signals/mem17khz.hex))
+- Señal 2: f1=1,5kHz y f2=8,5kHz (archivo [mem8p5khz.hex](../signals/mem8p5khz.hex))
+- Señal 3: f1=1,5kHz y f2=5,66kHz (archivo [mem5p66khz.hex](../signals/mem5p66khz.hex))
+- Señal 4: f1=1,5kHz y f2=4,25kHz (archivo [mem4p25khz.hex](../signals/mem4p25khz.hex))
 
 Se integran los 4 generadores de señales de tal forma que pueden ser seleccionados en cualquier instante de tiempo a través de los botones *i_sel[1:0]*.
 
@@ -32,7 +32,7 @@ Se implementó un testbench para evaluar el correcto funcionamiento del bloque c
 
 ![](./imgs/img_sim_signal_mux.png)
 
-Donde se obseva en verde la señal filtrada, en amarillo la señal salida del multiplexor (entrada del filtro), y el resto son las señales original obtenidas de sus correspondientes archivos .hex (carpeta [signals](./signals)).
+Donde se obseva en verde la señal filtrada, en amarillo la señal salida del multiplexor (entrada del filtro), y el resto son las señales original obtenidas de sus correspondientes archivos .hex (carpeta [signals](../signals)).
 
 Además se implementó un testbench para el testeo del bloque BRAM más FSM ([tb_ram_save.v](./tb_ram_save.v)), con pequeñas modificaciones al visto en clase.
 
