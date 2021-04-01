@@ -93,3 +93,84 @@ Los resultados fueron los iguientes:
 Todas las señales analógicas se encuentran escaladas entre -2 y 2, por lo que puede verificarse visualmente como la adición es del doble de amplitud de la señal original, y el resultado de la multiplicación tiene una amplitud menor (valor de señales originales menor que 1). Otra observación para verificar visualmente la multiplicación es cómo los resultados son solo positivos, ya que las señales de entrada coinciden en hemiciclos positivos y hemiciclos negativos. 
 
 Otro punto importante a resaltar, es la necesidad de cambiar la configuración de punto fijo para visualizar correctamente la adición (6 bits fraccionales) y el producto (12 bits fraccionales).
+
+### Síntesis
+
+En la carpeta [synthesis](./synthesis) pueden encontrarse los reportes de síntesis y de utilización obtenidos al sintetizar el proyecto.
+
+**Detalle de Celdas por Jerarquías:**
+
+|      |Instance               |Module                             |Cells |
+|:-----|:----------------------|:----------------------------------|-----:|
+|1     |top                    |                                   |  2329|
+|2     |> u_vio                |vio                                |     9|
+|3     |> u_top                |top                                |  2318|
+|4     |>>> gen_fir0           |gen_fir                            |  1059|
+|5     |>>>>  u_fir_filter     |fir_filter_4                       |   397|
+|6     |>>>>  u_signal_mux     |signal_mux_5                       |   662|
+|7     |>>>>>   u_signal_gen_1 |signal_generator_6                 |   198|
+|8     |>>>>>   u_signal_gen_2 |signal_generator__parameterized0_7 |   129|
+|9     |>>>>>   u_signal_gen_3 |signal_generator__parameterized1_8 |   183|
+|10    |>>>>>   u_signal_gen_4 |signal_generator__parameterized2_9 |   127|
+|11    |>>> gen_fir1           |gen_fir_0                          |  1072|
+|12    |>>>>  u_fir_filter     |fir_filter                         |   440|
+|13    |>>>>  u_signal_mux     |signal_mux                         |   632|
+|14    |>>>>>   u_signal_gen_1 |signal_generator                   |   168|
+|15    |>>>>>   u_signal_gen_2 |signal_generator__parameterized0   |   129|
+|16    |>>>>>   u_signal_gen_3 |signal_generator__parameterized1   |   183|
+|17    |>>>>>   u_signal_gen_4 |signal_generator__parameterized2   |   127|
+|18    |>>> ram_save0          |ram_save                           |    55|
+|19    |>>>>  u_bram           |bram_2                             |     1|
+|20    |>>>>  u_ram_fsm        |ram_fsm_3                          |     5|
+|21    |>>> ram_save1          |ram_save_1                         |    45|
+|22    |>>>>  u_bram           |bram                               |     1|
+|23    |>>>>  u_ram_fsm        |ram_fsm                            |     5|
+|24    |>>> u_adder_mult       |adder_mult                         |    54|
+|25    |>>> u_sel_logic        |button_logic                       |    12|
+
+El detalle de celdas puede observarse en detalle en el reporte de síntesis [top_vio_ila.vds](./synthesis/top_vio_ila.vds).
+
+**Mapeo final de Block RAM:**
+
+|Module Name              | RTL Object | PORT A (Depth x Width)  | W | R | PORT B (Depth x Width)  | W | R | Ports driving FF | RAMB18 | RAMB36 | 
+|:------------------------|------------|-------------------------|---|---|-------------------------|---|---|------------------|--------|--------|
+|u_top/\ram_save0/u_bram  | ram_reg    | 1 K x 16 (READ_FIRST)   | W |   | 1 K x 16 (WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|u_top/\ram_save1/u_bram  | ram_reg    | 1 K x 16 (READ_FIRST)   | W |   | 1 K x 16 (WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      |
+
+Pueden observarse las dos BRAM utilizadas en el proyecto.
+
+**Mapeo preliminar de DSP:**
+
+|Module Name | DSP Mapping                 | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
+|------------|-----------------------------|--------|--------|--------|--------|--------|------|------|------|------|-------|------|------|
+|fir_filter  | (A''*(B:0x3ffff))'          | 8      | 1      | -      | -      | 9      | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|fir_filter  | (ACIN''*(B:0x3ffff))'       | 8      | 1      | -      | -      | 9      | 2    | 0    | -    | -    | -     | 1    | 1    | 
+|fir_filter  | (A''*(B:0xd))'              | 8      | 5      | -      | -      | 13     | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|top         | (PCIN+(ACIN2*(B:0x8))')'    | 8      | 5      | -      | -      | 17     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fir_filter  | (C:0x0)'+(ACIN2*(B:0x3))'   | 8      | 3      | 16     | -      | 17     | 1    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | PCIN+A:B                    | 30     | 18     | -      | -      | -1     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (C:0x0)'+(A''*(B:0x3ffff))' | 8      | 1      | 16     | -      | 17     | 2    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | (C'+(ACIN''*(B:0x3))')'     | 8      | 3      | 13     | -      | 17     | 2    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | (ACIN''*(B:0xd))'           | 8      | 5      | -      | -      | 13     | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|fir_filter  | (PCIN+(A''*(B:0x10))')'     | 8      | 6      | -      | -      | 17     | 2    | 0    | -    | -    | -     | 1    | 1    | 
+|top         | PCIN+A:B                    | 30     | 18     | -      | -      | -1     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (A''*(B:0x3ffff))'          | 8      | 1      | -      | -      | 9      | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|fir_filter  | (ACIN''*(B:0x3ffff))'       | 8      | 1      | -      | -      | 9      | 2    | 0    | -    | -    | -     | 1    | 1    | 
+|fir_filter  | (A''*(B:0xd))'              | 8      | 5      | -      | -      | 13     | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|top         | (PCIN+(ACIN2*(B:0x8))')'    | 8      | 5      | -      | -      | 17     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|fir_filter  | (C:0x0)'+(ACIN2*(B:0x3))'   | 8      | 3      | 16     | -      | 17     | 1    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | PCIN+A:B                    | 30     | 18     | -      | -      | -1     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_filter  | (C:0x0)'+(A''*(B:0x3ffff))' | 8      | 1      | 16     | -      | 17     | 2    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | (C'+(ACIN''*(B:0x3))')'     | 8      | 3      | 13     | -      | 17     | 2    | 0    | 1    | -    | -     | 1    | 1    | 
+|top         | (ACIN''*(B:0xd))'           | 8      | 5      | -      | -      | 13     | 2    | 0    | -    | -    | -     | 1    | 0    | 
+|fir_filter  | (PCIN+(A''*(B:0x10))')'     | 8      | 6      | -      | -      | 17     | 2    | 0    | -    | -    | -     | 1    | 1    | 
+|top         | PCIN+A:B                    | 30     | 18     | -      | -      | -1     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+
+**Reporte de Shift Register estáticos:**
+
+|Module Name | RTL Name                                 | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
+|:-----------|:-----------------------------------------|--------|-------|--------------|--------------------|-------------------|--------|---------|
+|top         | gen_fir1/u_fir_filter/register_reg[5][7] | 4      | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|top         | gen_fir0/u_fir_filter/register_reg[5][7] | 4      | 16    | YES          | NO                 | YES               | 16     | 0       |
+
+Puede observarse que los shift register se utilizan en la síntesis de los filtros FIR.
