@@ -177,6 +177,8 @@ Puede observarse que los shift register se utilizan en la síntesis de los filtr
 
 ### Implementación
 
+En la carpeta [implementation](./implementation) pueden encontrarse los reportes de timing y histogramas obtenidos al implementar el proyecto para 100 y 200 MHz.
+
 Comparación de slack:
 
 |fclk  | Worst Negative Slack (WNS) | Total Negative Slack (TNS) | Worst Hold Slack (WHS) | Worst Pulse Width Slack (WPWS) |
@@ -195,3 +197,16 @@ Comparación de histogramas de slack:
 ![](./implementation/timing_histogram_200MHz.png)
 
 Puede observarse que para un clock con frecuencia de 200MHz el timing falla, los requerimientos no se cumplen. Por lo tanto, la implementación en el hardware fue para 100MHz.
+
+### Hardware
+
+Se programó el proyecto en FPGA remota y se interactuó con la placa a través del programa Vivado con las herramientas VIO e ILA. Algunos de los resultados obtenidos fueron los siguientes:
+
+- Adición de las señales filtradas:
+
+![](./imgs/ila_output_add.png)
+
+
+- Multiplicación de las señales filtradas:
+
+![](./imgs/ila_output_mult.png)
