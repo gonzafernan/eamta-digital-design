@@ -1,23 +1,34 @@
 # EAMTA 2021 - Digital Design
 
-The course aims to teach the basic concepts of digital design.
+El curso tiene como objetivo enseñar los conceptos básicos del diseño digital y esta dirigido por los profesores Dr. Ing. Ariel Pola (CognitionBI-Fundación Fulgor) y Ing. Federico G. Zacchigna (FIUBA).
 
-In the first part, the concepts of the HDL Verilog language are reviewed and the basic elements of digital design are presented: 
-Combinational circuits and sequential circuits.
+En la primer parte se revisan los conceptos del lenguaje HDL Verilog y se presentan los elementos básicos del diseño digital: Circuitos combinacionales y circuitos secuenciales.
 
-During the second part, the concepts of timing and gate and signal delays are addressed in order to understand how to properly design a digital circuit. 
-The importance of a correct design is demonstrated, not only from the logic point of view, but also from the time domain, that is to make it work efficiently or, in our case, fast enough to satisfy the requirements of the application.
+Durante la segunda parte, se abordan los conceptos de timing y retardos de compuerta y señal para comprender cómo diseñar correctamente un circuito digital. La importancia de un diseño correcto queda demostrada, no solo desde el punto de vista lógico, sino también desde el dominio del tiempo, es decir, hacerlo funcionar de manera eficiente o, en nuestro caso, lo suficientemente rápido como para satisfacer los requerimientos de la aplicación.
 
-In the third part, a synchronous circuit will be simulated and implemented on an FPGA. 
-During this process it will be verified that all constraints are met and finally its logic operation will be validated.
+En la tercera parte, se simula e implementa un circuito síncrono en una FPGA. Durante este proceso se verifica que se cumplan todas las restricciones y finalmente se valida su operación lógica.
 
-**Professors:** Dr. Ing. Ariel Pola (CognitionBI-Fundación Fulgor) and Eng. Federico G. Zacchigna (FIUBA)
+Los contenidos del curso pueden resumirse en los siguientes items:
 
-## Content
-- [Lab 1: Shift and flash of RGB LEDs](./lab1-shift_n_flash_leds)
+- Introducción a Verilog
+- Circuitos combinacionales y secuenciales
+- Representación de números binarios en punto fijo y punto flotante
+- Diagramas de tiempo de circuitos combinacionales y secuenciales
+- Ejemplos básicos de síntesis jerárquica
+- Análisis temporal de circuitos
+- Circuitos síncronos y retardos de compuerta
+- Tiempos característicos de un FF
+- Implementación de circuitos básicos en FPGA
+
+## Contenido del repositorio
+La práctica consistió en 3 laboratorios y un proyecto final para la aprobación del curso. Los trabajos pueden encontrarse en los siguientes links del repositorio:
+- [Lab 1: Shift y flash de RGB LEDs](./lab1-shift_n_flash_leds)
 - [Lab 2: Filtro FIR y análisis de reportes de timing](./lab2-fir_timing)
 - [Lab 3: Integración del filtro FIR con la memoria BRAM](./lab3-fir_bram)
 - [Proyecto: Memoria de logueo con filtros FIR y operaciones aritmeticas](./project-fir_log_mem)
 
-## About EAMTA
-The Argentine School of Micro-Nanoelectronics, Technology and Applications is a one-week school where undergraduate and graduate students attend intensive courses on topics related to the area of micro-nano electronics, with the aim of disseminating this area of knowledge, deepening the knowledge of professionals and academics, and promoting the development of related technology in the country and the region.
+## Certificación
+Los laboratorios y el proyecto final fueron corregidos y aprobados, con lo que recibí no solo el certificado de asistencia sino también el de aprobación del curso. Ambos certificados pueden encontrarse en la carpeta [docs](./docs).
+
+## Sobre EAMTA
+La Escuela Argentina de Micro Nanoelectrónica, Tecnología y Aplicaciones es una escuela de una semana donde estudiantes de pre y posgrado asisten a cursos intensivos en temas relacionados con el área de micro-nanoelectrónica, con el objetivo de difundir esta área de conocimiento, profundizando el saber de profesionales y académicos, y promoviendo el desarrollo de esta clase de tecnología en el país y la región.
