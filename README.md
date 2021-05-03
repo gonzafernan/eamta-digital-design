@@ -27,6 +27,8 @@ La práctica consistió en 3 laboratorios y un proyecto final para la aprobació
 - [Lab 3: Integración del filtro FIR con la memoria BRAM](./lab3-fir_bram)
 - [Proyecto: Memoria de logueo con filtros FIR y operaciones aritmeticas](./project-fir_log_mem)
 
+La herramienta utilizada fue la **suite Vivado de Xilinx**. Para el curso se dispuso de un banco de FPGA remotas a las que se podía acceder, programarlas y observar resultados utilizando los IP cores de Vivado VIO e ILA.
+
 ## Certificación
 Los laboratorios y el proyecto final fueron corregidos y aprobados, con lo que recibí no solo el certificado de asistencia sino también el de aprobación del curso. Ambos certificados pueden encontrarse en la carpeta [docs](./docs).
 
